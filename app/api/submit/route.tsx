@@ -8,7 +8,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const email = searchParams.get("email")!;
 
-  const decision = await arcjet.protect(req, { email: string });
+  const decision = await arcjet.protect(req, { email });
   if (decision.isDenied()) {
     if (decision.reason.isShield()) {
       console.log("Suspicious action detected!");

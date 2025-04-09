@@ -22,7 +22,7 @@ export default arcjet({
     }),
     validateEmail({
       mode: "LIVE",
-      block: ["DISPOSABLE", "INVALID", "NO_MX_RECORDS"],
+      deny: ["DISPOSABLE", "INVALID", "NO_MX_RECORDS"],
     }),
   ],
 });
